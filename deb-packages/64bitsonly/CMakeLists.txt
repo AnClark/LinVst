@@ -11,31 +11,28 @@ INCLUDE(FindPackageHandleStandardArgs)
 message( "Configuring Project LinVst." )
 
 SET(MAJOR_VERSION "2")
-SET(MINOR_VERSION "55")
+SET(MINOR_VERSION "6")
 SET(PATCH_VERSION "0")
 
+add_subdirectory( convertvst )
+add_subdirectory( converttreevst )
 add_subdirectory( liblinvst )
 add_subdirectory( exelinvst )
 
-install(FILES ../convert/pylinvstconvert-64bit DESTINATION ${SCRIPT1_INSTALL_PATH} bin
+install(FILES ../convert/linvstconvert64 DESTINATION ${SCRIPT1_INSTALL_PATH} bin
       PERMISSIONS OWNER_EXECUTE OWNER_READ
       GROUP_EXECUTE GROUP_READ
       WORLD_EXECUTE WORLD_READ )
-      
-install(FILES ../convert/linvstconvert64bit/linvstconvert DESTINATION ${SCRIPT1_INSTALL_PATH} bin
-      PERMISSIONS OWNER_EXECUTE OWNER_READ
-      GROUP_EXECUTE GROUP_READ
-      WORLD_EXECUTE WORLD_READ )  
-      
-install(FILES ../convert/linvstconvert64bit/linvstconverttree DESTINATION ${SCRIPT1_INSTALL_PATH} bin
-      PERMISSIONS OWNER_EXECUTE OWNER_READ
-      GROUP_EXECUTE GROUP_READ
-      WORLD_EXECUTE WORLD_READ )              
-      
- install(FILES ./pylinvstconvert-64bit-batch DESTINATION ${SCRIPT1_INSTALL_PATH} bin
-      PERMISSIONS OWNER_EXECUTE OWNER_READ
-      GROUP_EXECUTE GROUP_READ
-      WORLD_EXECUTE WORLD_READ )	
+
+# install(FILES ../convert/pylinvstconvert-64bit DESTINATION ${SCRIPT1_INSTALL_PATH} bin
+#      PERMISSIONS OWNER_EXECUTE OWNER_READ
+#      GROUP_EXECUTE GROUP_READ
+#      WORLD_EXECUTE WORLD_READ )
+            
+# install(FILES ./pylinvstconvert-64bit-batch DESTINATION ${SCRIPT1_INSTALL_PATH} bin
+#      PERMISSIONS OWNER_EXECUTE OWNER_READ
+#      GROUP_EXECUTE GROUP_READ
+#      WORLD_EXECUTE WORLD_READ )	
       
  install(FILES ../Readme DESTINATION ${SCRIPT1_INSTALL_PATH} share/LinVst
       PERMISSIONS OWNER_READ

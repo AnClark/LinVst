@@ -4,7 +4,7 @@
 SET(STATIC_LINKING FALSE )
 
 set( CMAKE_CXX_STANDARD 14 )
-set( CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -fPIC -O2 -DLVRT -DEMBED -DEMBEDDRAG -DWAVES -DVESTIGE -DXECLOSE -DNEWTIME ")
+set( CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -fPIC -O2 -DLVRT -DEMBED -DEMBEDDRAG -DWAVES -DVESTIGE -DXECLOSE -DNEWTIME -DINOUTMEM")
 
 # Project Path.
 ###############
@@ -28,4 +28,4 @@ add_library(linvst ${LINVST_SO_SRC} )
 set_target_properties(linvst PROPERTIES PREFIX "")
 target_link_libraries( linvst pthread dl X11 rt )
 
-install( TARGETS linvst-i386 DESTINATION share/LinVst/32bit )
+install( TARGETS linvst DESTINATION share/LinVst/32bit )
